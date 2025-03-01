@@ -33,6 +33,7 @@ jobs:
         run: |
           lscpu
           echo "lscpu_out=$(pwd)" >> $GITHUB_OUTPUT
+          echo "step2_out=[Hello, world!]" >> $GITHUB_OUTPUT
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
@@ -42,3 +43,4 @@ jobs:
           echo test, and deploy your project.
           echo ${{ steps.step1.outputs.step1_out }}
           echo ${{ steps.lscpu.outputs.lscpu_out }}
+          echo ${{ toJSON(steps.lscpu.outputs.step2_out) }}
