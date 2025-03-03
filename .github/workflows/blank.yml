@@ -22,6 +22,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
+      - name: Run a one-line script
+        id: step0
+        run: lscpu > lscpu.log
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         id: step1
@@ -44,3 +48,4 @@ jobs:
           echo ${{ steps.step1.outputs.step1_out }}
           echo ${{ steps.lscpu.outputs.lscpu_out }}
           echo ${{ toJSON(steps.lscpu.outputs.step2_out) }}
+          echo ${{ grep BogoMIPS lscpu.log }}
