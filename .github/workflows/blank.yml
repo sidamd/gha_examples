@@ -24,7 +24,7 @@ jobs:
 
       - name: Run a one-line script
         id: step0
-        run: lscpu > lscpu.log
+        run: lscpu 2>&1 | tee -a lscpu.log
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
