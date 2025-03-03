@@ -48,4 +48,4 @@ jobs:
           echo ${{ steps.step1.outputs.step1_out }}
           echo ${{ steps.lscpu.outputs.lscpu_out }}
           echo ${{ toJSON(steps.lscpu.outputs.step2_out) }}
-          echo ${{ grep BogoMIPS lscpu.log }}
+          echo $(grep BogoMIPS lscpu.log)
