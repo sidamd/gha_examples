@@ -36,6 +36,7 @@ jobs:
         id: lscpu
         run: |
           echo $HOME
+          echo $GITHUB_WORKSPACE
           lscpu
           echo "lscpu_out=$(pwd)" >> $GITHUB_OUTPUT
           echo "step2_out=[Hello, world!]" >> $GITHUB_OUTPUT
