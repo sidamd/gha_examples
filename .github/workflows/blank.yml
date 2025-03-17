@@ -35,6 +35,7 @@ jobs:
       - name: Run a one-line script
         id: lscpu
         run: |
+          echo $HOME
           lscpu
           echo "lscpu_out=$(pwd)" >> $GITHUB_OUTPUT
           echo "step2_out=[Hello, world!]" >> $GITHUB_OUTPUT
